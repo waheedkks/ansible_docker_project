@@ -6,7 +6,7 @@
     - name: Fetch files from the remote server
       synchronize:
         src: /opt/index.html
-        dest: /root/project
+        dest: /project
         mode: pull
 - hosts: ansible
   gather_facts: false
@@ -32,7 +32,7 @@
       source: build
       name: nginx_image:v1
       build:
-        path: /root/project/
+        path: /project/
       state: present
   
   - name: Creating the container and start
