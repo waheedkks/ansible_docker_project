@@ -5,7 +5,7 @@
   tasks:
     - name: Fetch files from the remote server
       synchronize:
-        src: /root/var/lib/jenkins/workspace/Myjob_github_ansible_docker
+        src: /var/lib/jenkins/workspace/Myjob_github_ansible_docker
         dest: /root/project
         mode: pull
 - hosts: ansible
@@ -32,7 +32,7 @@
       source: build
       name: nginx_image:v1
       build:
-        path: /root/project
+        path: /root/project/
       state: present
   
   - name: Creating the container and start
