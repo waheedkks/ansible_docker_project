@@ -5,7 +5,7 @@
   tasks:
     - name: Fetch files from the remote server
       synchronize:
-        src: /root/.jenkins/workspace/Myjob_github_ansible_docker/
+        src: /root/var/lib/jenkins/workspace/Myjob_github_ansible_docker
         dest: /root/project
         mode: pull
 - hosts: ansible
