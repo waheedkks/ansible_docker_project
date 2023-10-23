@@ -8,7 +8,7 @@
   - name: Building the my docker images
     docker_image:
       source: build
-      name: nginx_image:v1
+      name: nginx_image:latest
       build:
         path: ~/project
       state: present
@@ -16,9 +16,7 @@
   - name: Creating the container and start
     docker_container:
       name: nginx_container
-      image: nginx_image:v1
-      ports:
-        - "8183:80"
-      state: started    
+      image: nginx_image:latest
+       
 
  
