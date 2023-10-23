@@ -3,8 +3,23 @@
   gather_facts: false
   remote_user: root
   tasks:
-
   
+
+  - name: Stopping the container!!!!!
+    docker_container:
+      name: nginx_container
+      image: nginx_image:latest
+      state: stopped
+  - name: Removing the container 
+    docker_container:
+      name: nginx_container
+      image: nginx_image:latest
+      state: absent
+  - name: "Its deleting the old inmage!!!"
+    docker_image:
+      name: nginx_image:latest
+      state: absent
+
   - name: Building the my docker images
     docker_image:
       source: build
@@ -17,6 +32,10 @@
     docker_container:
       name: nginx_container
       image: nginx_image:latest
+      ports:
+        - "8183:80"
+      state: started   
+
        
 
  
