@@ -19,7 +19,7 @@
     docker_image:
       name: nginx_image:latest
       state: absent
-    - name: Building the my docker images
+  - name: Building the my docker images
     docker_image:
       source: build
       name: nginx_image:latest
